@@ -8,4 +8,8 @@
 
 ![alt text](lb1.PNG)
 
+--> Trained xgboost and catboost models as well.
+
+--> Lightgbm model outperformed xgboost and catboost as well as ensembles of the models.
+
 
