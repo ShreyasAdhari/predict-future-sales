@@ -1,4 +1,4 @@
-# Predict-future-sales
+# [Predict-future-sales](https://www.kaggle.com/competitions/competitive-data-science-predict-future-sales)
 
 ## Objective 
 - Objective is to predict the sales at a given store for a particular item for a month .
