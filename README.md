@@ -1,19 +1,37 @@
 # Predict-future-sales
 
---> Objective here is to predict the sales at a store for a particular item for a month.
+## Objective 
+- Objective is to predict the sales at a given store for a particular item for a month .
+- Sales refers to the number of items sold multiplied by its unit price.
 
---> Data is timeseries ( jan 2013 - oct 2015 ). The target month is nov 2015
+## Data Preprocessing
+- Data provided is a timeseries data consisting of sales occuring at various stores in Russia from `Nov 2013` to `Oct 2015`.
+- Missing values were imputed using mean for a particular item.
+- `Product id` or `Shop id` present only in train set were dropped.
+- Text columns were preprocessed by `lowercasing`, `removing special characters`, `remove leading and trailing white space` and `replace double spaces with single spaces`.
+- Memory usage was reduced by compressing the dataframe as much as possible.
+- `TimeSeriesSplit` was used for cross validation.
 
---> lgbm_dataset notebook is used to preprocess dataset given and create new features.
+## Feature Engineering
+- `lgbm_dataset.ipynb` notebook is used to preprocess dataset given and create new features.
+- `Mean encodings` are used extensively along with `medain encodings` and `max encodings`. These helped the model a lot.
+- `Lagging Features` were constructed for 1 month.
+- `Weekly Sales`, `Counts` and `Groupby Features` were also constructed.
 
---> hyperopt_lgbm notebook is used to train final model. The hyperparameters given were selected by bayesian optimisation. Optuna library was used.
+## Feature Selection and Hyperparamter Optimisation
+- Features were selected according to importance given to them by `LightGBM regression models`.
+- `Optuna` was used for hyperparamter optimisation. Focus was to improve model performance as well as to limit overfitting.
+- `hyperopt_lgbm_1.ipynb` notebook contains code for hyperparameter optimisation.
 
---> Final rmse of 0.85295 was achieved.
+## Training
+- `LightGBM`, `Xgboost` and `Catboost` models were trained. Simple Models were avoided as they gave poor results.
+
+## Results
+- `RMSE` of `0.85295` was achieved.
+- `Lightgbm` model outperformed `Xgboost` and `CatBoost` as well as ensembles of the models.
+-  `Public Leaderboard` Position of `216` was achieved.
 
 ![alt text](lb1.PNG)
 
---> Trained xgboost and catboost models as well.
-
---> Lightgbm model outperformed xgboost and catboost as well as ensembles of the models.
 
 
