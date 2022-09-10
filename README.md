@@ -1,8 +1,9 @@
 # [Predict-future-sales](https://www.kaggle.com/competitions/competitive-data-science-predict-future-sales)
 
 ## Objective 
-- Objective is to predict the sales at a given store for a particular item for a month .
-- Sales refers to the number of items sold multiplied by its unit price.
+- Objective is to `predict the sales` at a given store for a particular item for a month .
+- Sales refers to the `number of items sold` .
+- Metric for evaluation is `RMSE`.
 
 ## Data Preprocessing
 - Data provided is a timeseries data consisting of sales occuring at various stores in Russia from `Nov 2013` to `Oct 2015`.
